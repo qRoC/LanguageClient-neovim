@@ -46,7 +46,7 @@ integration-test: build
 	tests/test.sh
 
 integration-test-docker:
-	docker run --volume ${CURDIR}:/root/.config/nvim autozimu/languageclientneovim bash -c "\
+	docker run --volume ${CURDIR}:/root/.config/nvim qRoC/languageclientneovim bash -c "\
 		curl -O -L https://golang.org/dl/go1.16.2.linux-amd64.tar.gz && \
 		rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.2.linux-amd64.tar.gz && \
 		export PATH=$$PATH:/usr/local/go/bin:/usr/local/cargo/bin && \
@@ -57,7 +57,7 @@ integration-test-docker:
 		make integration-test"
 
 integration-test-docker-debug:
-	docker run --interactive --tty --volume ${CURDIR}:/root/.config/nvim autozimu/languageclientneovim
+	docker run --interactive --tty --volume ${CURDIR}:/root/.config/nvim qRoC/languageclientneovim
 
 clean:
 	cargo clean
@@ -67,10 +67,10 @@ DATE := $(shell date -u +%F)
 
 build-docker-image: ci/Dockerfile
 	docker build \
-		--tag autozimu/languageclientneovim:latest \
-		--tag autozimu/languageclientneovim:$(DATE) \
+		--tag qRoC/languageclientneovim:latest \
+		--tag qRoC/languageclientneovim:$(DATE) \
 		ci
 
 publish-docker-image:
-	docker push autozimu/languageclientneovim:latest
-	docker push autozimu/languageclientneovim:$(DATE)
+	docker push qRoC/languageclientneovim:latest
+	docker push qRoC/languageclientneovim:$(DATE)

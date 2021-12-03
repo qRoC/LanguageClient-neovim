@@ -6,7 +6,7 @@
 set -o nounset    # error when referencing undefined variable
 set -o errexit    # exit when command fails
 
-version=0.1.161
+version=0.1.162
 name=languageclient
 
 arch=$(uname -sm)
@@ -23,7 +23,7 @@ try_wget() {
 
 download() {
     echo "Trying download bin/${name} ${version}..."
-    url=https://github.com/autozimu/LanguageClient-neovim/releases/download/$version/${1}
+    url=https://github.com/qRoC/LanguageClient-neovim/releases/download/$version/${1}
     if (try_curl "$url" || try_wget "$url"); then
         chmod a+x bin/$name
         return

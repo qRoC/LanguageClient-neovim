@@ -35,8 +35,8 @@ More recordings at [Updates, screenshots & GIFs](https://github.com/autozimu/Lan
 Using [`vim-plug`](https://github.com/junegunn/vim-plug):
 
 ```vim
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
+Plug 'qRoC/LanguageClient-neovim', {
+    \ 'branch': 'dev',
     \ 'do': 'bash install.sh',
     \ }
 
